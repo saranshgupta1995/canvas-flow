@@ -1,0 +1,19 @@
+{
+    "name": "@saransh184/canvas-flow",
+    "version": "0.1.0",
+    "author": {
+        "name": "Saransh Gupta",
+        "email": "saranshgupta1995@gmail.com"
+    },
+    "description": "A minimalistic package to draw animated lines and arcs on canvas",
+    "keywords": [
+        "canvas",
+        "animations",
+        "draw",
+        "javascript"
+    ],
+    "license": "MIT",
+    "repository": {
+        "url": "https://github.com/saranshgupta1995/Spriter"
+    }
+}
