@@ -72,6 +72,9 @@ CanvasFlow.prototype.drawLine = function (startPointX, startPointY, endPointX, e
     }
 }
 
+/**
+ * cause the CanvasFlow to start the run process
+ */
 CanvasFlow.prototype.run = function () {
     for (let i = 0; i < this.__moves.length; i++) {
         const move = this.__moves[i];
@@ -99,6 +102,13 @@ CanvasFlow.prototype.run = function () {
     window.requestAnimationFrame(() => this.run())
 }
 
+/**
+ * Draw an animated arc which grows slowly in terms of angle
+ * @param {Number} x x-coordinate for center of arc
+ * @param {Number} y y-coordinate for center of arc
+ * @param {Number} radius radius of arc
+ * @param {Object} options (mode: 'speed', startAngle: 0, endAngle: 360, animSpeed: 3)
+ */
 CanvasFlow.prototype.drawAnimatedArc = function (x, y, radius, options = {
     mode: 'speed',
     startAngle: 0,
@@ -114,7 +124,14 @@ CanvasFlow.prototype.drawAnimatedArc = function (x, y, radius, options = {
     })
 }
 
-
+/**
+ * 
+ * @param {Number} startPointX x-coordinate for starting point of line
+ * @param {Number} startPointY y-coordinate for starting point of line
+ * @param {Number} endPointX x-coordinate for ending point of line
+ * @param {Number} endPointY y-coordinate for ending point of line
+ * @param {Object} options (mode: 'speed', speed: 1)
+ */
 CanvasFlow.prototype.drawAnimatedLine = function (startPointX, startPointY, endPointX, endPointY, options = { mode: 'speed', speed: 1 }) {
     let atan = Math.atan((endPointY - startPointY) / (endPointX - startPointX))
     let speedY = Math.abs(Math.sin(atan) * options.speed);
@@ -144,4 +161,4 @@ CanvasFlow.prototype.drawAnimatedBelzier = function (start, cp1, cp2, end, optio
     })
 }
 
-module.exports = { CanvasFlow }
+export default CanvasFlow;
