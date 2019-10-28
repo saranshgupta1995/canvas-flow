@@ -1,4 +1,7 @@
 <h1 align='center'>Canvas-Flow</h1>
+
+![version](https://img.shields.io/badge/dynamic/json?color=green&label=npm%20version&prefix=v&query=version&suffix=%20%40latest&url=https%3A%2F%2Fraw.githubusercontent.com%2Fsaranshgupta1995%2Fcanvas-flow%2Fmaster%2Fcanvas-flow%2Fpackage.json)
+
 A utility that lets you easily draw animations using lines and circles. This also exposes all drawing functions as promises to which you can listen to.
 <hr>
 
