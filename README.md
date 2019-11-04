@@ -1,6 +1,6 @@
 <h1 align='center'>Canvas-Flow</h1>
 
-![version](https://img.shields.io/badge/dynamic/json?color=green&label=npm%20version&prefix=v&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fsaranshgupta1995%2Fcanvas-flow%2Fmaster%2Fcanvas-flow%2Fpackage.json)
+![version](https://img.shields.io/badge/dynamic/json?color=green&label=npm%20version&prefix=v&query=version&url=https%3A%2F%2Fraw.githubusercontent.com%2Fsaranshgupta1995%2Fcanvas-flow%2Fmaster%2Fpackage.json)
 ![maintained](https://img.shields.io/badge/maintained-yes-brightgreen)
 [![Gitter](https://badges.gitter.im/canvas-flow/community.svg)](https://gitter.im/canvas-flow/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
