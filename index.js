@@ -133,11 +133,19 @@ CanvasFlow.prototype.drawAnimatedArc = function (x, y, radius, options = {
  * @param {Object} options (mode: 'speed', speed: 1)
  */
 CanvasFlow.prototype.drawAnimatedLine = function (startPointX, startPointY, endPointX, endPointY, options = { mode: 'speed', speed: 1 }) {
+    
+    const {mode, speed, numOfFrames} = options;
+
     let atan = Math.atan((endPointY - startPointY) / (endPointX - startPointX))
-    let speedY = Math.abs(Math.sin(atan) * options.speed);
-    let speedX = Math.abs(Math.cos(atan) * options.speed);
+    let speedY = Math.abs(Math.sin(atan) * speed);
+    let speedX = Math.abs(Math.cos(atan) * speed);
     speedX = (endPointX - startPointX) > 0 ? speedX : -speedX;
     speedY = (endPointY - startPointY) > 0 ? speedY : -speedY;
+
+    if(mode==='frames'){
+        speedX = (endPointX - startPointX)/numOfFrames;
+        speedY = (endPointY - startPointY)/numOfFrames;
+    }
 
     if ((speedX < 0.0001) && (speedX > -0.0001)) {
         speedX = 0;
