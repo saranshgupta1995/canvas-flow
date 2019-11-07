@@ -115,7 +115,10 @@ CanvasFlow.prototype.drawAnimatedArc = function (x, y, radius, options = {
     endAngle: 360,
     animSpeed: 3
 }) {
-    const { startAngle, endAngle, animSpeed } = options;
+    let { startAngle, endAngle, animSpeed, numOfFrames, mode } = options;
+    if (mode === 'frames') {
+        animSpeed = (endAngle - startAngle) / numOfFrames;
+    }
     return new Promise((res, rej) => {
         this.__moves.push({
             type: 'arc',
@@ -133,8 +136,8 @@ CanvasFlow.prototype.drawAnimatedArc = function (x, y, radius, options = {
  * @param {Object} options (mode: 'speed', speed: 1)
  */
 CanvasFlow.prototype.drawAnimatedLine = function (startPointX, startPointY, endPointX, endPointY, options = { mode: 'speed', speed: 1 }) {
-    
-    const {mode, speed, numOfFrames} = options;
+
+    const { mode, speed, numOfFrames } = options;
 
     let atan = Math.atan((endPointY - startPointY) / (endPointX - startPointX))
     let speedY = Math.abs(Math.sin(atan) * speed);
@@ -142,9 +145,9 @@ CanvasFlow.prototype.drawAnimatedLine = function (startPointX, startPointY, endP
     speedX = (endPointX - startPointX) > 0 ? speedX : -speedX;
     speedY = (endPointY - startPointY) > 0 ? speedY : -speedY;
 
-    if(mode==='frames'){
-        speedX = (endPointX - startPointX)/numOfFrames;
-        speedY = (endPointY - startPointY)/numOfFrames;
+    if (mode === 'frames') {
+        speedX = (endPointX - startPointX) / numOfFrames;
+        speedY = (endPointY - startPointY) / numOfFrames;
     }
 
     if ((speedX < 0.0001) && (speedX > -0.0001)) {

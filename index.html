@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./index.js"></script>
+</head>
+<body>
+    <canvas id="can"></canvas>
+    <script>
+    var ctx = document.getElementById('can').getContext('2d');
+    var cnv = new CanvasFlow(ctx);
+    cnv.run();
+    cnv.drawAnimatedArc(0,187,100,{
+        mode:'frames', numOfFrames:100, startAngle:0, endAngle:270
+    })
+    .then(x=>{
+        cnv.drawAnimatedLine(100.5,20.5,100.5,100.5, {
+            mode: 'frames', numOfFrames: 1
+        })
+        .then(x=>{
+            cnv.drawAnimatedLine(100.5,100.5,20.5,100.5, {
+                mode: 'frames', numOfFrames: 1
+            })
+            .then(x=>{
+                cnv.drawAnimatedLine(20.5,100.5,20.5,20.5, {
+                    mode: 'frames', numOfFrames: 1
+                })
+                .then(x=>{
+                    cnv.drawAnimatedLine(20.5,20.5,100.5,100.5, {
+                        mode: 'frames', numOfFrames: 1
+                    })
+                    .then(x=>{
+                        cnv.drawAnimatedLine(100.5,20.5,20.5,100.5, {
+                            mode: 'frames', numOfFrames: 1
+                        })
+                    })
+                })
+            })
+        })
+    })
+    </script>
+</body>
+</html>
